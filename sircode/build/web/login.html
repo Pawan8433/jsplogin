@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+ 
+<html>
+<head>
+    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="reset"],
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="reset"]:hover,
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+       <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["txtName"].value;
+            var password = document.forms["loginForm"]["txtPass"].value;
+
+            if (username === "") {
+                alert("Username must be filled out");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Password must be filled out");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <form action="check.jsp">
+            Enter User Name <br>
+            <input type="text" name="txtName"><br>
+            Enter Password <br>
+            <input type="password" name="txtPass"><br>
+            <input type="reset" value="RESET">
+            <input type="submit" value="LOGIN">
+               New Registration ?<a href="index.html">Click here to Signup</a>
+        </form>
+    </div>
+</body>
+</html>

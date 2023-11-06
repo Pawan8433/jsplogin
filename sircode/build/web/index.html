@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+ 
+<html>
+<head>
+    <title>New User Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="reset"],
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="reset"]:hover,
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+      <script>
+        function validateForm() {
+            var username = document.forms["registrationForm"]["txtName"].value;
+            var password1 = document.forms["registrationForm"]["txtPass1"].value;
+            var password2 = document.forms["registrationForm"]["txtPass2"].value;
+            var email = document.forms["registrationForm"]["txtEmail"].value;
+            var country = document.forms["registrationForm"]["txtCon"].value;
+
+            if (username === "") {
+                alert("Username must be filled out");
+                return false;
+            }
+
+            if (password1 === "") {
+                alert("Password must be filled out");
+                return false;
+            }
+
+            if (password2 === "") {
+                alert("Please re-enter the password");
+                return false;
+            }
+
+            if (password1 !== password2) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Email must be filled out");
+                return false;
+            }
+
+            if (country === "") {
+                alert("Country must be filled out");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="Register.jsp">
+        <h1>New User Registration Page</h1>
+        Enter User Name <br>
+        <input type="text" name="txtName"><br>
+        Enter Password <br>
+        <input type="password" name="txtPass1"><br>
+        Re-Enter Password<br>
+        <input type="password" name="txtPass2"><br>
+        Enter Email<br>
+        <input type="text" name="txtEmail"><br>
+        Enter Country Name <br>
+        <input type="text" name="txtCon"><br>
+        <input type="reset" value="RESET">
+        <input type="submit" value="REGISTER">
+        Already Registered?<a href="login.html">Click here to login</a>
+    </form>
+</body>
+</html>
+
